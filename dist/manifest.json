@@ -1,0 +1,57 @@
+{
+  "manifest_version": 2,
+  "name": "chrome-extension",
+  "description": "__MSG_pluginDesc__",
+  "version": "0.0.1",
+  "icons": {
+    "16": "img/jiqimao.png",
+    "48": "img/jiqimao.png",
+    "128": "img/jiqimao.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js","popup.js"
+    ]
+  },
+  "browser_action": {
+    "default_title": "This is a Chrome demo!",
+    "default_popup": "popup.html",
+    "default_icon": "img/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.baidu.com/*"
+      ],
+      "js": [
+        "js/content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "notifications",
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "web_accessible_resources": [
+    "inject.js",
+    "fonts/*"
+  ],
+  "homepage_url": "https://www.baidu.com",
+  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "omnibox": {
+    "keyword": "go"
+  },
+  "default_locale": "zh_CN",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
