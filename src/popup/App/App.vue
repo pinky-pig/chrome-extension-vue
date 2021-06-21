@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import Content from '@/popup/App/Content'
+import Content from '@/popup/App/content'
 export default {
   name: "app",
   components:{
