@@ -37,7 +37,6 @@
       <!-- 内容 -->
       <Content ref="content"></Content>
 
-
     </div>
   </div>
 </template>
